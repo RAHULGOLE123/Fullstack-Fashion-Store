@@ -1,4 +1,4 @@
-// backend/src/db/index.ts
+
 import { drizzle } from "drizzle-orm/postgres-js";
 import { Pool } from "pg";
 import * as schema from "./schema"; // Apna schema import karein

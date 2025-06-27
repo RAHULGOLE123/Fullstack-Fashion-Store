@@ -12,7 +12,7 @@ export const categories = pgTable('categories', {
 // Products Table
 export const products = pgTable('products', {
   id: serial('id').primaryKey(),
-  name: varchar('name', { length: 256 }).notNull(),
+  name: varchar('name', { length: 255 }).notNull(),
   description: text('description'),
   price: numeric('price', { precision: 10, scale: 2 }).notNull(), // Decimal values ke liye
   imageUrl: text('image_url').notNull(),
