@@ -1,0 +1,15 @@
+// backend/tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "rootDir": "./src", // Aapke source files 'src' folder mein honge
+    "outDir": "./dist", // Compiled JavaScript files 'dist' folder mein jayenge
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"], // 'src' folder ke andar sabhi .ts files ko include karein
+  "exclude": ["node_modules"] // node_modules ko ignore karein
+}
