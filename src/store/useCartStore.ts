@@ -2,10 +2,11 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
-export interface CartItem {
+export interface CartItem 
+{
   productId: number;
   name: string;
-  price: string; // Price will be string from backend numeric
+  price: string; 
   imageUrl: string;
   quantity: number;
 }
