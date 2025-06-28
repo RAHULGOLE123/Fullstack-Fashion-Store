@@ -48,8 +48,7 @@ const createProductSchema = z.object({
     categoryId: z.number().int().positive(),
 });
 
-app.post("/api/products", asyncHandler(async (req, res) => { // Wrap here
-    try {
+app.post("/api/products", asyncHandler(async (req, res) => { try {
         const validatedData = createProductSchema.parse(req.body);
         // Drizzle expects 'price' as numeric, jo SQL mein string-like hota hai.
         // Yahan hum price ko string mein convert kar sakte hain agar numeric('price') string expect karta hai.
