@@ -1,12 +1,8 @@
-
 import { drizzle } from "drizzle-orm/postgres-js";
-import { Pool } from "pg";
-import * as schema from "./schema"; // Apna schema import karein
-import * as dotenv from "dotenv";
-dotenv.config({ path: "../../.env" }); // Ek level up jake .env file load karein
+import postgres from "postgres";
+import * as schema from "./schema";
+import "dotenv/config";
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
+const client = postgres(process.env.DATABASE_URL!, { ssl: 'require' }); // Neon में ssl जरूरी होता है
 
-export const db = drizzle(pool, { schema }); // Schema ke saath drizzle client export karein
+export const db = drizzle(client, { schema });
